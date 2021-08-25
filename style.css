@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: helvetica;
+    font-weight: bolder;
+    color: rgba(72, 72, 211, 0.866);
+}
+@keyframes anim{
+    0%{
+        position: absolute;
+        left: 456px;
+        top: -110px;
+    }
+    100%{
+        position: absolute;
+        left: 50px;
+        top: 0px;
+        font-size: 40px;
+    }
+}
+.parent_animation{
+    animation-name: anim;
+    animation-timing-function: cubic-bezier(1,-0.47, 0.32, 1.77);
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.parent{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    background-color: #f4f4f4;
+}
+.screen{
+    width: 40%;
+    height: 50%;
+}
+
+.winner{
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.players{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.winnerX, .winnerO{
+    width: 40px;
+    height: 40px;
+}
+.winnerX img, .winnerO img{
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+.playerX, .playerO{
+    padding: 3px 10px;
+    border: 2px solid;
+    border-radius: 7px;
+    background-color: transparent;
+}
+
+.parent_game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-image: url(/images/clouds.png);
+    background-repeat: round;
+}
+.game {
+    width: 332px;
+    height: 332px;
+    background-color: white;
+    border: 1px solid blue;
+}
+.line{
+    width: 332px;
+    height: 110px;
+    display: flex;
+}
+.cell{
+    width: 110px;
+    height: 110px;
+    border: 1px solid blue;
+    font-size: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
