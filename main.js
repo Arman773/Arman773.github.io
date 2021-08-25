@@ -3,6 +3,10 @@ let parentParagraph = document.querySelector(".parent p");
 setTimeout(animation(),5000);
 k = 1;
 
+let scoreX = 0;
+let scoreO = 0;
+let scoreDraw = 0;
+
 function animation(){
   parentParagraph.classList.add('parent_animation')
 }
@@ -24,6 +28,7 @@ function createGameBoard (){
 
 createGameBoard();
 
+
 let cells = document.getElementsByClassName("cell");
 
 let player = 'x';
@@ -33,6 +38,13 @@ setTimeout(() => {
   document.querySelector(".playerX").style.backgroundColor = 'rgba(80,80,210,0.215)'
 }, 3000);
 
+function table(){
+  document.querySelector(".scoreX").innerHTML = "X's score: " + scoreX; 
+  document.querySelector(".scoreDraw").innerHTML = "Draw: " + scoreDraw;
+  document.querySelector(".scoreO").innerHTML = "O's score: " + scoreO;
+}
+
+table();
 
 game.addEventListener('click', clickFunction);
 
@@ -51,6 +63,7 @@ function clickFunction(event){
     
 
     if (isFullArray.length === 9){
+      scoreDraw += 1;
       setTimeout(() => {
         restartGame(cells);
       }, 3000);
@@ -59,11 +72,17 @@ function clickFunction(event){
     event.target.innerHTML = player;
     if (win(cells)){
       if (player === 'x'){
+        scoreX += 1;
         document.querySelector('.winnerX img').style.display = 'block';
       } else {
+        scoreO += 1;
         document.querySelector('.winnerO img').style.display = 'block';
 
       }
+
+      table();
+
+      game.removeEventListener('click', clickFunction);
       setTimeout(() => {
         restartGame(cells);
       }, 3000);
@@ -95,6 +114,9 @@ function restartGame(cells){
     document.querySelector(".playerO").style.backgroundColor = 'transparent'
     
     document.querySelector(".playerX").style.backgroundColor = 'rgba(80,80,210,0.215)'
+
+    game.addEventListener('click', clickFunction);
+
       
 }
 
@@ -134,3 +156,11 @@ let win =  function chekingWin(cells){
 
     return false
 } 
+
+document.querySelector('.reset').addEventListener("click", () => {
+  document.querySelector(".scoreX").innerHTML = "X's score: " + 0; 
+  document.querySelector(".scoreDraw").innerHTML = "Draw: " + 0;
+  document.querySelector(".scoreO").innerHTML = "O's score: " + 0;
+
+})
+
