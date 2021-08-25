@@ -103,3 +103,29 @@
     align-items: center;
     justify-content: center;
 }
+.table{
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+}
+.scoreX, .scoreO, .scoreDraw{
+    letter-spacing: 2px;
+    font-size: 25px;
+    padding: 5px;
+}
+.reset{
+    font-size: 25px;
+    margin-top: 15px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.reset:hover{
+    border-radius: 20px;
+    border: 2px solid rgba(72, 72, 211, 0.866);
+    background-color: rgba(80,80,210,0.215);
+}
