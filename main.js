@@ -158,9 +158,13 @@ let win =  function chekingWin(cells){
 } 
 
 document.querySelector('.reset').addEventListener("click", () => {
-  document.querySelector(".scoreX").innerHTML = "X's score: " + 0; 
-  document.querySelector(".scoreDraw").innerHTML = "Draw: " + 0;
-  document.querySelector(".scoreO").innerHTML = "O's score: " + 0;
+  scoreX = 0;
+  scoreDraw = 0;
+  scoreO = 0;
+  
+  document.querySelector(".scoreX").innerHTML = "X's score: " + scoreX; 
+  document.querySelector(".scoreDraw").innerHTML = "Draw: " + scoreDraw;
+  document.querySelector(".scoreO").innerHTML = "O's score: " + scoreO;
 
 })
 
